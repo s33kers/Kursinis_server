@@ -17,7 +17,7 @@ import java.util.stream.Collectors;
 public class BCSolver {
 
 
-    public static Output solve(Input input) {
+    public static Output solve(Input input) throws Unsolvable {
 
         BCRef result = new BCRef(input);
         if(solveRecursivly(input.getGoal(), result)){
@@ -27,7 +27,7 @@ public class BCSolver {
         return result.output;
     }
 
-    private static boolean solveRecursivly(Atom goal, BCRef result) {
+    private static boolean solveRecursivly(Atom goal, BCRef result) throws Unsolvable {
         StringBuilder builder = result.output.getResult();
         builder.append(++result.step);
         appendGoalInfo(goal, builder);
@@ -45,8 +45,7 @@ public class BCSolver {
                 .collect(Collectors.toList());
 
         if (potentialRules.isEmpty()) {
-            builder.append("Nėra taisyklių šiam tikslui pasiekti.\n");
-            return false;
+            throw new Unsolvable("Nėra taisyklių šiam tikslui pasiekti.\n");
         }
 
         for (Rule potentialRule : potentialRules) {

@@ -1,7 +1,7 @@
 package service;
 
+import solver.Unsolvable;
 import solver.model.Input;
-import solver.model.Output;
 import solver.model.SolverResult;
 
 import javax.jws.WebService;
@@ -11,7 +11,7 @@ import javax.jws.soap.SOAPBinding;
 @SOAPBinding(style = SOAPBinding.Style.RPC)
 public interface ChainSolver {
 
-    SolverResult solveBackwardChaining(Input input);
+    SolverResult solveBackwardChaining(Input input) throws Unsolvable;
 
     SolverResult solveForwardChaining(Input input);
 }

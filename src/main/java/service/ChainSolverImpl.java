@@ -2,6 +2,7 @@ package service;
 
 import solver.BCSolver;
 import solver.FCSolver;
+import solver.Unsolvable;
 import solver.model.Input;
 import solver.model.Output;
 import solver.model.SolverResult;
@@ -12,7 +13,7 @@ import javax.jws.WebService;
 public class ChainSolverImpl implements ChainSolver {
 
     @Override
-    public SolverResult solveBackwardChaining(Input input) {
+    public SolverResult solveBackwardChaining(Input input) throws Unsolvable {
         Output output = BCSolver.solve(input);
         return mapSolverResult(output);
     }
