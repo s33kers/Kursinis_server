@@ -1,6 +1,7 @@
 package solver.model;
 
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlElementWrapper;
 import javax.xml.bind.annotation.XmlTransient;
 import javax.xml.bind.annotation.XmlType;
 import java.util.List;
@@ -9,6 +10,7 @@ import java.util.StringJoiner;
 /**
  * Created by tadas.
  */
+@XmlType(propOrder = {"name", "leftHandSide", "rightHandSide"})
 public class Rule {
 
     private String name;
@@ -39,6 +41,7 @@ public class Rule {
         this.name = name;
     }
 
+    @XmlElementWrapper(name = "allLeftHandSide", required = true)
     @XmlElement(required = true)
     public List<Atom> getLeftHandSide() {
         return leftHandSide;

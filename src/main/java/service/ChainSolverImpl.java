@@ -9,7 +9,7 @@ import solver.model.SolverResult;
 
 import javax.jws.WebService;
 
-@WebService(endpointInterface ="service.ChainSolver")
+@WebService(endpointInterface = "service.ChainSolver")
 public class ChainSolverImpl implements ChainSolver {
 
     @Override

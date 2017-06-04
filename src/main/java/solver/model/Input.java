@@ -1,6 +1,7 @@
 package solver.model;
 
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlElementWrapper;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.util.ArrayList;
 import java.util.List;
@@ -27,14 +28,18 @@ public class Input {
     public void setGoal(Atom goal) {
         this.goal = goal;
     }
-    @XmlElement(required = true)
+
+    @XmlElementWrapper(name = "rules", required = true)
+    @XmlElement(name = "rule", required = true)
     public List<Rule> getRules() {
         return rules;
     }
-    @XmlElement(required = true)
+
+    @XmlElement(name = "fact", required = true)
     public List<Atom> getFacts() {
         return facts;
     }
+
     @XmlElement(required = true)
     public Atom getGoal() {
         return goal;
