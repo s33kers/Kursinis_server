@@ -1,5 +1,6 @@
 package service;
 
+import com.sun.xml.ws.developer.SchemaValidation;
 import solver.BCSolver;
 import solver.FCSolver;
 import solver.Unsolvable;
@@ -9,7 +10,8 @@ import solver.model.SolverResult;
 
 import javax.jws.WebService;
 
-@WebService(endpointInterface = "service.ChainSolver")
+@WebService(endpointInterface = "service.ChainSolver") //, name = "ChainSolver", serviceName = "ChainSolverService", targetNamespace = "http://chainsolver"
+@SchemaValidation
 public class ChainSolverImpl implements ChainSolver {
 
     @Override

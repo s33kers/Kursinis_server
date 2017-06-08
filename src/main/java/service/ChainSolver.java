@@ -6,12 +6,13 @@ import solver.model.SolverResult;
 
 import javax.jws.WebService;
 import javax.jws.soap.SOAPBinding;
+import javax.xml.bind.annotation.XmlElement;
 
 @WebService
 @SOAPBinding
 public interface ChainSolver {
 
-    SolverResult solveBackwardChaining(Input input) throws Unsolvable;
+    SolverResult solveBackwardChaining(@XmlElement(required = true) Input input) throws Unsolvable;
 
-    SolverResult solveForwardChaining(Input input);
+    SolverResult solveForwardChaining(@XmlElement(required = true) Input input);
 }
