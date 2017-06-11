@@ -1,4 +1,4 @@
-package solver;
+package us.martink.solver;
 
 /**
  * Created by tadas.

@@ -1,9 +1,9 @@
-package solver;
+package us.martink.solver;
 
-import solver.model.Atom;
-import solver.model.Input;
-import solver.model.Output;
-import solver.model.Rule;
+import us.martink.solver.model.Atom;
+import us.martink.solver.model.Input;
+import us.martink.solver.model.Output;
+import us.martink.solver.model.Rule;
 
 import java.util.ArrayList;
 import java.util.List;

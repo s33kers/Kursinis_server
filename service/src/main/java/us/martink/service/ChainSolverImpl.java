@@ -1,16 +1,16 @@
-package service;
+package us.martink.service;
 
 import com.sun.xml.ws.developer.SchemaValidation;
-import solver.BCSolver;
-import solver.FCSolver;
-import solver.Unsolvable;
-import solver.model.Input;
-import solver.model.Output;
-import solver.model.SolverResult;
+import us.martink.solver.BCSolver;
+import us.martink.solver.FCSolver;
+import us.martink.solver.Unsolvable;
+import us.martink.solver.model.Input;
+import us.martink.solver.model.Output;
+import us.martink.solver.model.SolverResult;
 
 import javax.jws.WebService;
 
-@WebService(endpointInterface = "service.ChainSolver") //, name = "ChainSolver", serviceName = "ChainSolverService", targetNamespace = "http://chainsolver"
+@WebService(endpointInterface = "us.martink.service.ChainSolver") //, name = "us.martink.service.ChainSolver", serviceName = "ChainSolverService", targetNamespace = "http://chainsolver"
 @SchemaValidation
 public class ChainSolverImpl implements ChainSolver {
 

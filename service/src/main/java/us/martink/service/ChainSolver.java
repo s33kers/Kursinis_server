@@ -1,8 +1,8 @@
-package service;
+package us.martink.service;
 
-import solver.Unsolvable;
-import solver.model.Input;
-import solver.model.SolverResult;
+import us.martink.solver.Unsolvable;
+import us.martink.solver.model.Input;
+import us.martink.solver.model.SolverResult;
 
 import javax.jws.WebService;
 import javax.jws.soap.SOAPBinding;

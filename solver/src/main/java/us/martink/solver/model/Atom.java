@@ -1,7 +1,6 @@
-package solver.model;
+package us.martink.solver.model;
 
 import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
 
 /**
  * Created by tadas.
